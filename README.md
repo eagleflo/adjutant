@@ -5,6 +5,14 @@ files.
 
 ## Installation
 
+adjutant depends on [mpyq](http://github.com/arkx/mpyq/), a Python library for
+reading MPQ files. If you're only interested in adjutant, an easy way to test
+it is to first clone this adjutant repository and then clone mpyq inside it.
+
+    $ git clone git://github.com/arkx/adjutant.git
+    $ cd adjutant
+    $ git clone git://github.com/arkx/mpyq.git
+
 For now, adjutant is not installable as an egg. This will change in the
 future.
 
