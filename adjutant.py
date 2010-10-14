@@ -142,16 +142,19 @@ class SC2Replay(object):
             details.read(3) # 06 05 08
             values = {}
             values.update(read_table(details, ['alpha',
-                                               'red',
-                                               'green',
-                                               'blue',
+                                               'r',
+                                               'g',
+                                               'b',
                                                'unknown',
                                                'unknown',
                                                'unknown',
                                                'unknown',
                                                'team']))
             player['team'] = values['team']
-            player['color'] = COLORS["%(red)02X%(green)02X%(blue)02X" % values]
+            try:
+                player['color'] = COLORS["%(r)02X%(g)02X%(b)02X" % values]
+            except KeyError:
+                player['color'] = "%(r)02X%(g)02X%(b)02X" % values
             return player
 
         details = StringIO.StringIO(self.archive.read_file('replay.details'))
