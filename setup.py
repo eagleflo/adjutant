@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='adjutant',
-      version='0.1',
+      version='0.1.1',
       author='Aku Kotkavuo',
       author_email='aku@hibana.net',
       url='http://github.com/arkx/adjutant/',
