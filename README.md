@@ -5,13 +5,19 @@ files.
 
 ## Installation
 
-adjutant can be installed with the included setup.py script.
+A stable version of adjutant is available from PyPI and can be installed with
+either `easy_install` or `pip`.
+
+    easy_install adjutant
+    pip install adjutant
+
+adjutant can be installed manually with the included setup.py script.
 
     python setup.py install
 
-Running this command will install adjutant both as a library and a stand-alone
-script that can be run from anywhere, provided that you have added Python's
-bin directory to your PATH environment variable.
+Running any of these commands will install adjutant both as a library and a
+stand-alone script that can be run from anywhere, provided that you have added
+Python's bin directory to your PATH environment variable.
 
 An alternative way to install adjutant is to clone this git repository. Note
 that adjutant depends on [mpyq](http://github.com/arkx/mpyq/), a Python
