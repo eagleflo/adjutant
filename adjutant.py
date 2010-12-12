@@ -19,7 +19,7 @@ import mpyq
 
 
 __author__ = "Aku Kotkavuo"
-__version__ = "0.1"
+__version__ = "0.1.1"
 
 
 COLORS = {
