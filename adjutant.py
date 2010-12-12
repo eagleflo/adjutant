@@ -40,6 +40,72 @@ COLORS = {
     'E55BB0': 'Pink'
 }
 
+KOREAN_MAP_NAMES = {
+    u' 아그리아 골짜기': "Agria Valley",
+    u'폭염 사막': "Blistering Sands",
+    # u'': "Burial Grounds",
+    u'십자포화': "Crossfire",
+    u'사막 오아시스': "Desert Oasis",
+    u'소각 지대': "Incineration Zone",
+    u'밀림 분지': "Jungle Basin",
+    u'고물 처리장': "Junk Yard",
+    u'폭염 사막 초보자용': "Novice Blistering Sands",
+    u'사막 오아시스 초보자용': "Novice Desert Oasis",
+    u'전쟁 초원 초보자용': "Novice Steppes of War",
+    u'고철 처리장': "Scrap Station",
+    u'전쟁 초원': "Steppes of War",
+    # u'': "Worldship",
+    u'젤나가 동굴': "Xel'Naga Caverns",
+    u'엘리시움': "Elysium",
+    u'메마른 황무지': "Arid Wastes",
+    # u'': "Debris Field",
+    u'델타 사분면': "Delta Quadrant",
+    u'불협화음 IV': "Discord IV",
+    u'고궤도': "High Orbit",
+    u'쿨라스 협곡': "Kulas Ravine",
+    u'잃어버린 사원': "Lost Temple",
+    u'금속도시': "Metalopolis",
+    u'몬리스 마루': "Monlyth Ridge",
+    # u'': "New Antioch",
+    # u'': "Nightmare",
+    u'불협화음 IV 초보자용': "Novice Discord IV",
+    u'쿨라스 협곡 초보자용': "Novice Kulas Ravine",
+    u'금속도시 초보자용': "Novice Metalopolis",
+    u'몬리스 마루 초보자용': "Novice Monlyth Ridge",
+    # u'': "Novice Terminus",
+    u'황혼 요새 초보자용': "Novice Twilight Fortress",
+    # u'': "Red Stone Gulch",
+    u'잿더미 안식처': "Scorched Haven",
+    u'샤쿠라스 고원': "Shakuras Plateau",
+    u'타소니스 공습': "Tarsonis Assault",
+    # u'': "Terminus",
+    u'황혼 요새': "Twilight Fortress",
+    u'전쟁 지역': "War Zone",
+    u'아라칸 요새 ': "Arakan Citadel",
+    # u'': "Burning Tide",
+    u'426 거주지': "Colony 426",
+    u'발굴지': "Dig Site",
+    # u'': "Dirt Side",
+    u'변경 지대': "Frontier",
+    u'계절풍 지대': "Monsoon",
+    u'모래늪': "Quicksand",
+    # u'': "Tectonic Rift",
+    u'생체 실험실': "The Bio Lab",
+    u'티폰': "Typhon",
+    u'울란의 심연': "Ulaan Deeps",
+    u'심연': "Abyss",
+    u'절멸': "Extinction",
+    # u'': "Forbidden Planet",
+    u'고지대': "High Ground",
+    u'용암 흐름': "Lava Flow",
+    u'메가톤': "Megaton",
+    u'전초 기지': "Outpost",
+    u'모래 협곡': "Sand Canyon",
+    u'폭풍우 전장': "Tempest",
+    u'독지대': "Toxic Slums",
+    # u'': "Zenith"
+}
+
 
 def vlq2int(data):
     """Read one VLQ-encoded integer value from an input data stream."""
@@ -168,7 +234,9 @@ class SC2Replay(object):
         # Sort players by team by default.
         result['players'] = sorted(result['players'], key=lambda x: x['team'])
         map_name_len = ord(details.read(1)) // 2
-        result['map'] = details.read(map_name_len)
+        result['map'] = details.read(map_name_len).decode('utf-8')
+        if result['map'] in KOREAN_MAP_NAMES:
+            result['map'] += ' (%s)' % KOREAN_MAP_NAMES[result['map']]
         return result['players'], result['map']
 
     def get_duration(self, seconds):
