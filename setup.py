@@ -3,15 +3,17 @@
 from setuptools import setup
 
 setup(name='adjutant',
-      version='0.1.1',
+      version='0.1.2',
       author='Aku Kotkavuo',
       author_email='aku@hibana.net',
       url='http://github.com/arkx/adjutant/',
       description='A Python library for parsing StarCraft II replays.',
       py_modules=['adjutant'],
-      scripts=['adjutant.py'],
       requires=['mpyq'],
       install_requires=['mpyq'],
+      entry_points={
+        'console_scripts': ['adjutant = adjutant:main']
+      },
       classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',

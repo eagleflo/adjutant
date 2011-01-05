@@ -11,7 +11,6 @@ import os
 import re
 import StringIO
 import struct
-import sys
 from collections import namedtuple, OrderedDict
 from itertools import groupby
 
@@ -19,7 +18,7 @@ import mpyq
 
 
 __author__ = "Aku Kotkavuo"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 COLORS = {
@@ -41,7 +40,7 @@ COLORS = {
 }
 
 KOREAN_MAP_NAMES = {
-    u' 아그리아 골짜기': "Agria Valley",
+    u'아그리아 골짜기': "Agria Valley",
     u'폭염 사막': "Blistering Sands",
     # u'': "Burial Grounds",
     u'십자포화': "Crossfire",
@@ -260,7 +259,7 @@ class SC2Replay(object):
             print '{team:<5} {name:12} {race:10} {color}'.format(**player)
 
 
-def main(argv):
+def main():
     description = "adjutant parses and analyzes StarCraft II replays."
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("file", action="store", help="path to the archive")
@@ -288,4 +287,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()

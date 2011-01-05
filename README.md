@@ -60,7 +60,7 @@ Player details are stored inside dicts.
 
 ### From the command line
 
-    usage: adjutant.py [-h] [-r] file
+    usage: adjutant [-h] [-r] file
 
     adjutant parses and analyzes StarCraft II replays.
 
@@ -74,7 +74,7 @@ Player details are stored inside dicts.
 Without any optional arguments, adjutant will display a summary of the
 replay.
 
-    ./adjutant.py multi.SC2Replay
+    adjutant multi.SC2Replay
     Map       Toxic Slums
     Duration  26m 17s
     Version   1.0.2.16223
@@ -91,7 +91,7 @@ replay.
 
 You can automatically rename a replay with `-r/--rename`.
 
-    ./adjutant.py -r tlohasu.SC2Replay
+    adjutant -r tlohasu.SC2Replay
     PvT.mouzHasu.vs.LiquidTLO.on.Metalopolis.2010-08-24-0644.SC2Replay
 
 ## Copyright
