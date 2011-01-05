@@ -8,12 +8,12 @@ files.
 A stable version of adjutant is available from PyPI and can be installed with
 either `easy_install` or `pip`.
 
-    easy_install adjutant
-    pip install adjutant
+    $ easy_install adjutant
+    $ pip install adjutant
 
 adjutant can be installed manually with the included setup.py script.
 
-    python setup.py install
+    $ python setup.py install
 
 Running any of these commands will install adjutant both as a library and a
 stand-alone script that can be run from anywhere, provided that you have added
@@ -74,7 +74,7 @@ Player details are stored inside dicts.
 Without any optional arguments, adjutant will display a summary of the
 replay.
 
-    adjutant multi.SC2Replay
+    $ adjutant multi.SC2Replay
     Map       Toxic Slums
     Duration  26m 17s
     Version   1.0.2.16223
@@ -91,7 +91,7 @@ replay.
 
 You can automatically rename a replay with `-r/--rename`.
 
-    adjutant -r tlohasu.SC2Replay
+    $ adjutant -r tlohasu.SC2Replay
     PvT.mouzHasu.vs.LiquidTLO.on.Metalopolis.2010-08-24-0644.SC2Replay
 
 ## Copyright
