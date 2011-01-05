@@ -96,4 +96,4 @@ You can automatically rename a replay with `-r/--rename`.
 
 ## Copyright
 
-Copyright 2010, Aku Kotkavuo. See LICENSE for details.
+Copyright 2010, 2011 Aku Kotkavuo. See LICENSE for details.
