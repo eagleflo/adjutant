@@ -17,3 +17,7 @@ class TestSC2Replay(unittest.TestCase):
         self.assertEqual(self.replay.duration, '26m 17s')
         self.assertEqual(self.replay.version, '1.0.2.16223')
         self.assertEqual(len(self.replay.players), 8)
+
+    def test_init_with_a_file_arg(self):
+        self.replay = SC2Replay(open(TEST_DIR + 'test.SC2Replay', 'rb'))
+        self.assertEqual(self.replay.map, 'Toxic Slums')
